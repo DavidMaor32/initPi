@@ -2,19 +2,17 @@
 
 # update the system
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo -v
 
-GAMES="nsnake bastet 2048 cmatrix cbonsai asciiquarium sl"
-TOOLS="make git gh fzf tree bat thefuck nginx"
-UTILITIES="neofetch mc ranger tmux lynx cal"
-LIBRARIES="libusb sqlite3 psql"
-MUST_HAVE="python3 zsh"
-
-sudo apt-get install ${TOOLS} ${MUST_HAVE} ${GAMES} ${UTILITIES} ${LIBRARIES} -y
-sudo -v
+# download packages
+for list in ./lists/*.list:
+	for package in $(cat list);do sudo apt-get install $package -y;done
 
 # oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if find ~/.oh-my-zsh ; then
+    echo "oh-my-zsh already installed!"
+else
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # java jdk23
 if java -version && javac -version ; then
