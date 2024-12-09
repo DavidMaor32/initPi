@@ -1,2 +1,25 @@
-download git and run init.sh
-run `sh -c "$(curl -fsSL https://raw.githubusercontent.com/DavidMaor32/initPi/master/init.sh)"`
+update the system.
+```
+sudo apt update -y && sudo apt upgrade -y
+```
+
+install git
+```
+sudo apt-get install git -y
+```
+
+go to the directory
+```
+cd initPi
+```
+
+run init.sh
+```
+cd initPi
+sh init.sh
+```
+or
+```
+chmod +x init.sh
+./init.sh
+```
