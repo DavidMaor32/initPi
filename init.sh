@@ -23,8 +23,8 @@ else
     wget https://download.java.net/java/GA/jdk23/3c5b90190c68498b986a97f276efd28a/37/GPL/openjdk-23_linux-aarch64_bin.tar.gz
     sudo tar -xvzf openjdk-23_linux-aarch64_bin.tar.gz -C /opt
     rm -rf openjdk-23_linux-aarch64_bin.tar.gz
-    echo "export JAVA_HOME=/opt/jdk-23" >> ~/.zshrc
-    echo "export PATH=$PATH:$JAVA_HOME/bin" >> ~/.zshrc
+    export JAVA_HOME=/opt/jdk-23
+    export PATH=$PATH:$JAVA_HOME/bin
 fi
 
 # node version manager
