@@ -10,7 +10,7 @@ UTILITIES="neofetch mc ranger tmux lynx cal"
 LIBRARIES="libusb sqlite3 psql"
 MUST_HAVE="python3 zsh"
 
-sudo apt-get install $MUST_HAVE $GAMES $TOOLS $UTILITIES $LIBRARIES -y
+sudo apt-get install ${MUST_HAVE} ${GAMES} ${TOOLS} ${UTILITIES} ${LIBRARIES} -y
 sudo -v
 
 # oh my zsh
