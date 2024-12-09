@@ -4,11 +4,11 @@
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo -v
 
-GAMES = "nsnake bastet 2048 cmatrix cbonsai asciiquarium sl"
-TOOLS = "make git gh fzf tree bat thefuck nginx"
-UTILITIES = "neofetch mc ranger tmux lynx cal"
-LIBRARIES = "libusb sqlite3 psql"
-MUST_HAVE = "python3 zsh"
+GAMES="nsnake bastet 2048 cmatrix cbonsai asciiquarium sl"
+TOOLS="make git gh fzf tree bat thefuck nginx"
+UTILITIES="neofetch mc ranger tmux lynx cal"
+LIBRARIES="libusb sqlite3 psql"
+MUST_HAVE="python3 zsh"
 
 sudo apt-get install $MUST_HAVE $GAMES $TOOLS $UTILITIES $LIBRARIES -y
 sudo -v
