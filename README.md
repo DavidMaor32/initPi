@@ -1,1 +1,1 @@
-run `curl -L  https://github.com/DavidMaor32/initPi/raw/refs/heads/main/init.sh | sudo bash`
+run `sh -c "$(curl -fsSL https://raw.githubusercontent.com/DavidMaor32/initPi/master/init.sh)"`
