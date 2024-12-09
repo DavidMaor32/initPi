@@ -15,7 +15,6 @@ cd initPi
 
 run init.sh
 ```
-cd initPi
 sh init.sh
 ```
 or
