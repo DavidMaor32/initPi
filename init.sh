@@ -17,18 +17,26 @@ sudo -v
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # java jdk23
-wget https://download.java.net/java/GA/jdk23/3c5b90190c68498b986a97f276efd28a/37/GPL/openjdk-23_linux-aarch64_bin.tar.gz
-sudo tar -xvzf openjdk-23_linux-aarch64_bin.tar.gz -C /opt
-rm -rf openjdk-23_linux-aarch64_bin.tar.gz
-echo "export JAVA_HOME=/opt/jdk-23" >> ~/.zshrc
-echo "export PATH=$PATH:$JAVA_HOME/bin" >> ~/.zshrc
+if java -version && javac -version ; then
+    echo "java already installed!"
+else
+    wget https://download.java.net/java/GA/jdk23/3c5b90190c68498b986a97f276efd28a/37/GPL/openjdk-23_linux-aarch64_bin.tar.gz
+    sudo tar -xvzf openjdk-23_linux-aarch64_bin.tar.gz -C /opt
+    rm -rf openjdk-23_linux-aarch64_bin.tar.gz
+    echo "export JAVA_HOME=/opt/jdk-23" >> ~/.zshrc
+    echo "export PATH=$PATH:$JAVA_HOME/bin" >> ~/.zshrc
+fi
 
 # node version manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install 20
+if node -v ; then
+    echo "node already installed!"
+else
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    nvm install 20
+fi
 
 # docker
 # Add Docker's official GPG key:
